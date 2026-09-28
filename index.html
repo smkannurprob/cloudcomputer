@@ -1,111 +1,432 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>TPQ Nurul Quran</title>
+    <title>Profil Siswa - TPQ Nurul Quran</title>
 
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        * {
+            box-sizing: border-box;
             margin: 0;
-            background: #f5f5f5;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f3f6f9;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* HEADER */
+        header {
+            background: linear-gradient(135deg, #198754, #126b43);
+            color: white;
+            padding: 30px 20px;
+        }
+
+        .header-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand h1 {
+            font-size: 22px;
+        }
+
+        .brand p {
+            font-size: 13px;
+            opacity: 0.9;
+        }
+
+        /* MAIN */
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* PROFILE CARD */
+        .profile-card {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            margin-bottom: 25px;
+        }
+
+        /* AVATAR */
+        .avatar {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            background: #e9f5ef;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 70px;
+            flex-shrink: 0;
+            border: 5px solid #198754;
+        }
+
+        .profile-info h2 {
+            font-size: 28px;
+            margin-bottom: 5px;
+            color: #198754;
+        }
+
+        .profile-info .nis {
+            color: #777;
+            margin-bottom: 15px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #dff5e9;
+            color: #198754;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: bold;
+        }
+
+        /* SECTION */
+        .section {
+            background: white;
+            border-radius: 18px;
+            padding: 30px;
+            margin-bottom: 25px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .section-title {
+            font-size: 20px;
+            color: #198754;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e9f5ef;
+        }
+
+        /* DATA */
+        .data-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px 30px;
+        }
+
+        .data-item {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .data-label {
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 4px;
+        }
+
+        .data-value {
+            font-weight: 600;
             color: #333;
         }
 
-        header {
-            background: #198754;
-            color: white;
-            text-align: center;
-            padding: 60px 20px;
+        /* STATUS */
+        .status {
+            color: #198754;
+            font-weight: bold;
         }
 
-        header h1 {
-            margin-bottom: 10px;
-        }
-
-        .container {
-            max-width: 900px;
-            margin: 40px auto;
-            padding: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-
-        .button {
-            display: inline-block;
-            background: #198754;
-            color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 6px;
-        }
-
+        /* FOOTER */
         footer {
             text-align: center;
-            padding: 30px;
-            background: #222;
-            color: white;
+            padding: 30px 20px;
+            color: #777;
+            font-size: 13px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            .header-container {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 5px;
+            }
+
+            .profile-card {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .profile-info h2 {
+                font-size: 24px;
+            }
+
+            .data-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .avatar {
+                width: 130px;
+                height: 130px;
+                font-size: 60px;
+            }
         }
     </style>
 </head>
 
 <body>
 
+    <!-- HEADER -->
     <header>
-        <h1>TPQ Nurul Quran</h1>
-        <p>Belajar Al-Qur'an dengan penuh semangat</p>
+        <div class="header-container">
+
+            <div class="brand">
+                <h1>TPQ Nurul Quran</h1>
+                <p>Sistem Informasi Santri</p>
+            </div>
+
+        </div>
     </header>
 
-    <div class="container">
 
-        <div class="card">
-            <h2>Selamat Datang</h2>
+    <!-- CONTENT -->
+    <main class="container">
 
-            <p>
-                Selamat datang di website TPQ Nurul Quran.
-                Website ini menjadi media informasi dan
-                dokumentasi kegiatan lembaga.
-            </p>
+        <!-- PROFILE -->
+        <div class="profile-card">
 
-            <a href="#" class="button">
-                Selengkapnya
-            </a>
+            <!-- AVATAR SEMENTARA -->
+            <div class="avatar">
+                👤
+            </div>
+
+            <div class="profile-info">
+
+                <h2>Ahmad Fauzan</h2>
+
+                <p class="nis">
+                    NIS: 20260001
+                </p>
+
+                <span class="badge">
+                    Santri Aktif
+                </span>
+
+            </div>
+
         </div>
 
-        <div class="card">
-            <h2>Tentang Kami</h2>
 
-            <p>
-                TPQ Nurul Quran merupakan lembaga pendidikan
-                Al-Qur'an yang berkomitmen memberikan pendidikan
-                agama kepada para santri.
-            </p>
-        </div>
+        <!-- DATA PRIBADI -->
+        <section class="section">
 
-        <div class="card">
-            <h2>Kontak</h2>
+            <h3 class="section-title">
+                Data Pribadi
+            </h3>
 
-            <p>
-                Email: nurulquran@example.com
-            </p>
+            <div class="data-grid">
 
-            <p>
-                Telepon: 08xxxxxxxxxx
-            </p>
-        </div>
+                <div class="data-item">
+                    <span class="data-label">
+                        Nama Lengkap
+                    </span>
 
-    </div>
+                    <span class="data-value">
+                        Ahmad Fauzan
+                    </span>
+                </div>
 
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Nama Panggilan
+                    </span>
+
+                    <span class="data-value">
+                        Fauzan
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Tempat, Tanggal Lahir
+                    </span>
+
+                    <span class="data-value">
+                        Jakarta, 12 Mei 2015
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Jenis Kelamin
+                    </span>
+
+                    <span class="data-value">
+                        Laki-laki
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Tahun Masuk
+                    </span>
+
+                    <span class="data-value">
+                        2024
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Status
+                    </span>
+
+                    <span class="data-value status">
+                        Aktif
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATA MADIN -->
+        <section class="section">
+
+            <h3 class="section-title">
+                Data Madin
+            </h3>
+
+            <div class="data-grid">
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Kelas
+                    </span>
+
+                    <span class="data-value">
+                        Kelas 4
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Tahun Pelajaran
+                    </span>
+
+                    <span class="data-value">
+                        2026 / 2027
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Wali Kelas
+                    </span>
+
+                    <span class="data-value">
+                        Ustadz Ahmad
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Status Madin
+                    </span>
+
+                    <span class="data-value status">
+                        Aktif
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- DATA ORANG TUA -->
+        <section class="section">
+
+            <h3 class="section-title">
+                Data Orang Tua / Wali
+            </h3>
+
+            <div class="data-grid">
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Nama Ayah
+                    </span>
+
+                    <span class="data-value">
+                        Bapak Muhammad
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Nama Ibu
+                    </span>
+
+                    <span class="data-value">
+                        Ibu Fatimah
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Nomor HP
+                    </span>
+
+                    <span class="data-value">
+                        081234567890
+                    </span>
+                </div>
+
+
+                <div class="data-item">
+                    <span class="data-label">
+                        Alamat
+                    </span>
+
+                    <span class="data-value">
+                        Jakarta Selatan
+                    </span>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
     <footer>
         © 2026 TPQ Nurul Quran
     </footer>
 
 </body>
 </html>
+```
